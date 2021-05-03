@@ -63,9 +63,9 @@ class Project(models.Model):
         for values in vals_list:
             allow_timesheets = values.get('allow_timesheets', defaults.get('allow_timesheets'))
             analytic_account_id = values.get('analytic_account_id', defaults.get('analytic_account_id'))
-            if allow_timesheets and not analytic_account_id:
-                analytic_account = self._create_analytic_account_from_values(values)
-                values['analytic_account_id'] = analytic_account.id
+            #if allow_timesheets and not analytic_account_id:
+                #analytic_account = self._create_analytic_account_from_values(values)
+                #values['analytic_account_id'] = analytic_account.id
         return super(Project, self).create(vals_list)
 
     def write(self, values):
